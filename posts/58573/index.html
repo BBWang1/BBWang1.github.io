@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>drf学习0x02 | haorical的博客</title><meta name="keywords" content="python,django,rest,Django REST framework"><meta name="author" content="Haorical"><meta name="copyright" content="Haorical"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="今天重新看了一遍drf的文档，真的是豁然开朗，以前写的时候都是不求甚解，直接cv，现在知道为什么这么写了   技巧 data直接模拟来自客户端数据， 不用request.data 字典用get，不要用[]，容易报错 request.POST的类型是QueryDict，和普通的Dict不同的是，如果使用get，只能获得数组的最后一个数，必须使用getlist才能获取list  反序列化校验数据字段">
+<meta property="og:type" content="article">
+<meta property="og:title" content="drf学习0x02">
+<meta property="og:url" content="https://haorical.top/posts/58573/index.html">
+<meta property="og:site_name" content="haorical的博客">
+<meta property="og:description" content="今天重新看了一遍drf的文档，真的是豁然开朗，以前写的时候都是不求甚解，直接cv，现在知道为什么这么写了   技巧 data直接模拟来自客户端数据， 不用request.data 字典用get，不要用[]，容易报错 request.POST的类型是QueryDict，和普通的Dict不同的是，如果使用get，只能获得数组的最后一个数，必须使用getlist才能获取list  反序列化校验数据字段">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png">
+<meta property="article:published_time" content="2022-08-15T15:25:48.000Z">
+<meta property="article:modified_time" content="2022-08-18T16:00:20.477Z">
+<meta property="article:author" content="Haorical">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="django">
+<meta property="article:tag" content="rest">
+<meta property="article:tag" content="Django REST framework">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://haorical.top/posts/58573/"><link rel="preconnect" href="//fastly.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Haorical","link":"链接: ","source":"来源: haorical的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'drf学习0x02',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-19 00:00:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://blog.haorical.top/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">haorical的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">drf学习0x02</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-15T15:25:48.000Z" title="发表于 2022-08-15 23:25:48">2022-08-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-18T16:00:20.477Z" title="更新于 2022-08-19 00:00:20">2022-08-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/">后端开发</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="drf学习0x02"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>今天重新看了一遍drf的文档，真的是豁然开朗，以前写的时候都是不求甚解，直接cv，现在知道为什么这么写了</p>
+</blockquote>
+<p><img src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2022/20220813002037.png"></p>
+<h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><ol>
+<li>data直接模拟来自客户端数据， 不用request.data</li>
+<li>字典用get，不要用[]，容易报错</li>
+<li>request.POST的类型是QueryDict，和普通的Dict不同的是，如果使用get，只能获得数组的最后一个数，必须使用getlist才能获取list</li>
+</ol>
+<h2 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h2><h3 id="校验数据"><a href="#校验数据" class="headerlink" title="校验数据"></a>校验数据</h3><p>字段选项，都是反序列化需要</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">max_length</span><br><span class="line">min_length</span><br><span class="line">allow_blank</span><br><span class="line">trim_whitespace 截断空白符</span><br><span class="line">max_value</span><br><span class="line">min_value</span><br><span class="line"></span><br><span class="line">validaters = [序列化器外部的验证函数]</span><br><span class="line"></span><br><span class="line">required = <span class="literal">False</span> 反序列化时可以不提供，不会报错</span><br><span class="line"></span><br><span class="line">read_only = <span class="literal">True</span> 前端提交的数据不应该有这个字段，有的话被忽略</span><br><span class="line">wirte_only = <span class="literal">True</span> 对象转化成字典时，不需要这个字段</span><br><span class="line">err_message = &#123;<span class="string">&#x27;min_value&#x27;</span>: <span class="string">&#x27;小于最小值&#x27;</span>&#125; 自定义验证字段报错信息</span><br></pre></td></tr></table></figure>
+
+<p>反序列化基本步骤</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 实例化serializer对象</span><br><span class="line">xx = XXSerializer(data=xxxx)</span><br><span class="line"><span class="number">2.</span> 校验数据</span><br><span class="line">xx.is_valid()</span><br><span class="line"><span class="number">3.</span> 获取验证数据</span><br><span class="line">xx.validated_data</span><br><span class="line"><span class="number">4.</span> 获取验证报错</span><br><span class="line">xx.errors <span class="comment"># dict key为字段</span></span><br><span class="line"><span class="number">2.</span> 直接抛出异常，不需要<span class="number">4</span></span><br><span class="line">xx.is_valid(raise_exception=<span class="literal">True</span>)</span><br><span class="line"><span class="number">4.</span> 保存</span><br><span class="line">xx.save()</span><br><span class="line"><span class="number">5.</span> 返回</span><br><span class="line">xx.validated_data</span><br></pre></td></tr></table></figure>
+
+<p>验证</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 抛出异常</span><br><span class="line"><span class="keyword">raise</span> serializers.ValidationError(detail=<span class="string">&quot;xxxx&quot;</span>, code=<span class="string">&quot;validate_name&quot;</span>)</span><br><span class="line"><span class="number">2.</span> 验证来自客户端所有数据 </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">validate</span>(<span class="params">self, attrs</span>)</span><br><span class="line"><span class="number">3.</span> 验证单一字段xxx</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">validate_xxx</span>(<span class="params">self, data</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="保存数据"><a href="#保存数据" class="headerlink" title="保存数据"></a>保存数据</h3><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">create</span>(<span class="params">self, validated_data</span>):</span><br><span class="line">    <span class="keyword">return</span> xxx_model.objects.create(**validated_data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">update</span>(<span class="params">self, instance, validated_data</span>):</span><br><span class="line">    <span class="comment"># instance.xx = validated_data[&#x27;xx&#x27;]</span></span><br><span class="line">    <span class="built_in">setattr</span>(instance, key, value)</span><br><span class="line">    instance.save()  <span class="comment"># django没有update方法</span></span><br><span class="line">    <span class="keyword">return</span> instance</span><br><span class="line">更新操作：</span><br><span class="line"><span class="number">1.</span> 实例化 partial=<span class="literal">True</span>允许只传入部分字段更新，不验证其它字段</span><br><span class="line">serializer = XXSerializer(instance=instance, data=data, partial=<span class="literal">True</span>)</span><br><span class="line"><span class="number">2.</span> 校验</span><br><span class="line">xx.is_valid(raise_exception=<span class="literal">True</span>)</span><br><span class="line"><span class="number">3.</span> 保存</span><br><span class="line">serializer.save()  <span class="comment"># 可以传不需要校验的数据 如owner=request.user</span></span><br><span class="line"><span class="number">4.</span> 返回</span><br><span class="line">serializer.validated_data</span><br></pre></td></tr></table></figure>
+
+<h3 id="ModelSerializer简化代码"><a href="#ModelSerializer简化代码" class="headerlink" title="ModelSerializer简化代码"></a>ModelSerializer简化代码</h3><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">    model = User</span><br><span class="line">    fields = [<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;name&#x27;</span>]</span><br><span class="line">    exclude = [排除的字段]  <span class="comment"># 少用</span></span><br><span class="line">    read_only_fields = [<span class="string">&#x27;id&#x27;</span>]  <span class="comment"># 只读 即只有序列化时候才用的字段</span></span><br><span class="line">    extra_kwargs = &#123;  <span class="comment">#  字段的选项</span></span><br><span class="line">        <span class="string">&#x27;字段名&#x27;</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;选项&#x27;</span>: value,</span><br><span class="line">        &#125;,</span><br><span class="line">        如：</span><br><span class="line">        <span class="string">&#x27;name&#x27;</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;max_length&#x27;</span>: <span class="number">10</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">重写create方法</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create</span>(<span class="params">self, validated_data</span>):</span><br><span class="line">    validated_data[<span class="string">&#x27;password&#x27;</span>] = make_password(validated_data[<span class="string">&#x27;password&#x27;</span>])</span><br><span class="line">    <span class="built_in">super</span>().create(validated_data)</span><br></pre></td></tr></table></figure>
+
+<p>模型中没有声明的字段可以自己加，自己加的没有值不会返回，model导入的一定会返回（null）</p>
+<h2 id="APIView"><a href="#APIView" class="headerlink" title="APIView"></a>APIView</h2><p>基本视图，继承自View，升级了request&#x2F;response&#x2F;as_view&#x2F;异常处理方法</p>
+<p>新增类属性：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> authentication_classes 身份认证</span><br><span class="line"><span class="number">2.</span> permission_classes     权限检查</span><br><span class="line"><span class="number">3.</span> throttle_classes       流量控制</span><br></pre></td></tr></table></figure>
+<p>方法（需要自己写）：</p>
+<ol>
+<li>get</li>
+<li>post</li>
+<li>patch</li>
+<li>put</li>
+<li>delete</li>
+</ol>
+<h3 id="request-x2F-response"><a href="#request-x2F-response" class="headerlink" title="request&#x2F;response"></a>request&#x2F;response</h3><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">request.data     <span class="comment"># body/json/file 都可以解析</span></span><br><span class="line">request.query_params</span><br><span class="line">request._request <span class="comment"># django原生request</span></span><br><span class="line">response(headers=&#123;<span class="string">&#x27;flag&#x27;</span>: <span class="string">&#x27;123456&#x27;</span>&#125;) <span class="comment"># 自定义响应头</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="GenericAPIView-Mixin"><a href="#GenericAPIView-Mixin" class="headerlink" title="GenericAPIView+Mixin"></a>GenericAPIView+Mixin</h3><p>GenericAPIView通用视图，继承自APIView</p>
+<p>新增类属性：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> queryset </span><br><span class="line"><span class="number">2.</span> serializer_class</span><br><span class="line"><span class="number">3.</span> lookup_field     用于数据库查询字段名</span><br><span class="line"><span class="number">4.</span> lookup_url_kwarg 前端传过来的字段名</span><br></pre></td></tr></table></figure>
+<p>新增类方法：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> get_queryset()</span><br><span class="line"><span class="number">2.</span> get_serializer() 多个serializer需要重写 一般不用_<span class="keyword">class</span>的</span><br><span class="line"><span class="number">3.</span> get_object()  使用lookup_field参数在queryset中查/重写以提供基于多个参数查</span><br><span class="line"><span class="number">4.</span> filter_object() </span><br></pre></td></tr></table></figure>
+
+<p>Mixin类,提供了增删查改的几个方法</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> ListModelMixin     提供<span class="built_in">list</span>方法</span><br><span class="line"><span class="number">2.</span> CreateModelMixin   提供create方法</span><br><span class="line"><span class="number">3.</span> RetrieveModelMixin 提供查询单个对象方法</span><br><span class="line"><span class="number">4.</span> UpdateModelMixin   更新/partial=<span class="literal">True</span>部分更新</span><br><span class="line"><span class="number">5.</span> DestroyModelMixin  删除</span><br></pre></td></tr></table></figure>
+
+<h4 id="ListAPIView"><a href="#ListAPIView" class="headerlink" title="ListAPIView"></a>ListAPIView</h4><p>继承自GenericAPIView和ListModelMixin，提供了get方法，里面调用了mixin类里的list方法，下面都类似，一看名字就知道了，不一一介绍了</p>
+<h4 id="CreateAPIView"><a href="#CreateAPIView" class="headerlink" title="CreateAPIView"></a>CreateAPIView</h4><h4 id="RetrieveAPIView"><a href="#RetrieveAPIView" class="headerlink" title="RetrieveAPIView"></a>RetrieveAPIView</h4><h4 id="DestroyAPIView"><a href="#DestroyAPIView" class="headerlink" title="DestroyAPIView"></a>DestroyAPIView</h4><h4 id="UpdateAPIView"><a href="#UpdateAPIView" class="headerlink" title="UpdateAPIView"></a>UpdateAPIView</h4><h4 id="ListCreateAPIView"><a href="#ListCreateAPIView" class="headerlink" title="ListCreateAPIView"></a>ListCreateAPIView</h4><h4 id="RetrieveUpdateAPIView"><a href="#RetrieveUpdateAPIView" class="headerlink" title="RetrieveUpdateAPIView"></a>RetrieveUpdateAPIView</h4><h4 id="RetrieveDestroyAPIView"><a href="#RetrieveDestroyAPIView" class="headerlink" title="RetrieveDestroyAPIView"></a>RetrieveDestroyAPIView</h4><h4 id="RetrieveUpdateDestroyAPIView"><a href="#RetrieveUpdateDestroyAPIView" class="headerlink" title="RetrieveUpdateDestroyAPIView"></a>RetrieveUpdateDestroyAPIView</h4><h2 id="ViewSet"><a href="#ViewSet" class="headerlink" title="ViewSet"></a>ViewSet</h2><p>继承自APIView，更加简化代码，可以把多个相关的视图放到一块儿，搭配独特路由器机制，as_view中绑定请求method到视图的方法list&#x2F;create&#x2F;retrieve&#x2F;update&#x2F;destroy，但不提供这些方法实现，需要自己写</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">XXXViewSet.as_view(&#123;<span class="string">&#x27;get&#x27;</span>: <span class="string">&#x27;list/自己的方法名···&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="GenericViewSet"><a href="#GenericViewSet" class="headerlink" title="GenericViewSet"></a>GenericViewSet</h3><p>继承自GenericAPIView，不是ViewSet，也是不提供crud方法</p>
+<h3 id="ModelViewSet"><a href="#ModelViewSet" class="headerlink" title="ModelViewSet"></a>ModelViewSet</h3><p>继承自GenericViewSet和所有mixin类，提供完整crud方法</p>
+<h3 id="RealOnlyModelViewSet"><a href="#RealOnlyModelViewSet" class="headerlink" title="RealOnlyModelViewSet"></a>RealOnlyModelViewSet</h3><p>继承自GenericViewSet+RetrieveModelMixin+ListModelMixin</p>
+<h2 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h2><p>路由，自动绑定method到视图集方法</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">router = routers.SimpleRouter()</span><br><span class="line">router.register(<span class="string">r&#x27;users&#x27;</span>, UserViewSet)</span><br><span class="line">router.register(<span class="string">r&#x27;accounts&#x27;</span>, AccountViewSet)</span><br><span class="line">urlpatterns = router.urls</span><br></pre></td></tr></table></figure>
+
+<p>自定义方法绑定</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="meta">@detail_route(<span class="params">methods=[<span class="string">&#x27;post&#x27;</span>], permission_classes=[IsAdminOrIsSelf], url_path=<span class="string">&#x27;yyyyyy&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">xxxxxx</span>(<span class="params">self, request, **kwargs</span>)</span><br><span class="line"></span><br><span class="line">router自动生成这样的url: aaa/&#123;pk&#125;/yyyyyy</span><br><span class="line"></span><br><span class="line">或者直接action绑定，和上面的类似</span><br><span class="line"><span class="meta">@action(<span class="params">methods, detail=<span class="literal">True</span>/<span class="literal">False</span>, url_path, url_name</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>自定义异常处理</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.views <span class="keyword">import</span> exception_handler</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">custom_exception_handler</span>(<span class="params">exc, context</span>):</span><br><span class="line">    response = exception_handler(exc, context) <span class="comment"># 先调用drf生成一个标准的</span></span><br><span class="line">    <span class="keyword">if</span> response <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        response.data[<span class="string">&#x27;status_code&#x27;</span>] = response.status_code  <span class="comment"># 向response里传数据 </span></span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Haorical</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://haorical.top/posts/58573/">https://haorical.top/posts/58573/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://haorical.top" target="_blank">haorical的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a><a class="post-meta__tags" href="/tags/django/">django</a><a class="post-meta__tags" href="/tags/rest/">rest</a><a class="post-meta__tags" href="/tags/Django-REST-framework/">Django REST framework</a></div><div class="post_share"><div class="social-share" data-image="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://fastly.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/0/"><img class="prev-cover" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/posts/1167/"><img class="next-cover" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Vue学习</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/33712/" title="drf学习"><img class="cover" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-15</div><div class="title">drf学习</div></div></a></div><div><a href="/posts/64874/" title="django学习"><img class="cover" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-12</div><div class="title">django学习</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E5%B7%A7"><span class="toc-number">1.</span> <span class="toc-text">技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.</span> <span class="toc-text">校验数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.</span> <span class="toc-text">保存数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ModelSerializer%E7%AE%80%E5%8C%96%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.</span> <span class="toc-text">ModelSerializer简化代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APIView"><span class="toc-number">3.</span> <span class="toc-text">APIView</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#request-x2F-response"><span class="toc-number">3.1.</span> <span class="toc-text">request&#x2F;response</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GenericAPIView-Mixin"><span class="toc-number">3.2.</span> <span class="toc-text">GenericAPIView+Mixin</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ListAPIView"><span class="toc-number">3.2.1.</span> <span class="toc-text">ListAPIView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CreateAPIView"><span class="toc-number">3.2.2.</span> <span class="toc-text">CreateAPIView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RetrieveAPIView"><span class="toc-number">3.2.3.</span> <span class="toc-text">RetrieveAPIView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DestroyAPIView"><span class="toc-number">3.2.4.</span> <span class="toc-text">DestroyAPIView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UpdateAPIView"><span class="toc-number">3.2.5.</span> <span class="toc-text">UpdateAPIView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ListCreateAPIView"><span class="toc-number">3.2.6.</span> <span class="toc-text">ListCreateAPIView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RetrieveUpdateAPIView"><span class="toc-number">3.2.7.</span> <span class="toc-text">RetrieveUpdateAPIView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RetrieveDestroyAPIView"><span class="toc-number">3.2.8.</span> <span class="toc-text">RetrieveDestroyAPIView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RetrieveUpdateDestroyAPIView"><span class="toc-number">3.2.9.</span> <span class="toc-text">RetrieveUpdateDestroyAPIView</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ViewSet"><span class="toc-number">4.</span> <span class="toc-text">ViewSet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GenericViewSet"><span class="toc-number">4.1.</span> <span class="toc-text">GenericViewSet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ModelViewSet"><span class="toc-number">4.2.</span> <span class="toc-text">ModelViewSet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RealOnlyModelViewSet"><span class="toc-number">4.3.</span> <span class="toc-text">RealOnlyModelViewSet</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Router"><span class="toc-number">5.</span> <span class="toc-text">Router</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">异常处理</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Haorical</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'lHtaVmeX92EN0sTKncDq3p1B-9Nh9j0Va',
+      appKey: 'rRiyfIJKeQU4Xg5WVHLqw9cf',
+      avatar: 'monsterid',
+      serverURLs: 'https://lhtavmex.lc-cn-e1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://fastly.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

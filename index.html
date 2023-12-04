@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>haorical的博客 - 一分耕耘，一分收获</title><meta name="author" content="Haorical"><meta name="copyright" content="Haorical"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ctf退役种子选手">
+<meta property="og:type" content="website">
+<meta property="og:title" content="haorical的博客">
+<meta property="og:url" content="https://haorical.top/index.html">
+<meta property="og:site_name" content="haorical的博客">
+<meta property="og:description" content="ctf退役种子选手">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.haorical.top/images/avatar.jpg">
+<meta property="article:author" content="Haorical">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.haorical.top/images/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://haorical.top/"><link rel="preconnect" href="//fastly.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Haorical","link":"链接: ","source":"来源: haorical的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'haorical的博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-12-04 16:29:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://blog.haorical.top/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">haorical的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">haorical的博客</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/haorical" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:haorical@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/posts/30065/" title="旧博客链接：&lt;https://blog.haorical.top&gt;"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="旧博客链接：&lt;https://blog.haorical.top&gt;"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/30065/" title="旧博客链接：&lt;https://blog.haorical.top&gt;">旧博客链接：&lt;https://blog.haorical.top&gt;</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack sticky"></i><span class="sticky">置顶</span><span class="article-meta-separator">|</span></span><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-25T12:19:02.000Z" title="发表于 2022-03-25 20:19:02">2022-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/30065/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/30065/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">旧博客链接：https://blog.haorical.top我 TM 不小心把本地文件删了，然后愚蠢之 node_modules 在安装时把硬盘覆盖了，恢复不了。只好重新搭了一个新的环境，旧博客是在 GitHub 上最后一次提交的版本。
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/24549/" title="移动应用开发"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="移动应用开发"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/24549/" title="移动应用开发">移动应用开发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-16T08:04:38.000Z" title="发表于 2023-11-16 16:04:38">2023-11-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/24549/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/24549/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">ViewTextView Button EditTextorientation vertical horizent
+public class myActivity extends Activity&#123;    private Button bt;   @Override    protected void onCreate(Bundle savedInstanceState) &#123;        super().onCreate(savedInstanceState);        setContentView(R.layout.main);        bt = (Button)findViewById(R.id.bt);        tv = (TextView) findViewById(R.id.tv);        bt.setOnClickListener(new OnClickListener()&#123;            @Override            public void onClick(View v)&#123;       ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/7585/" title="各种考试记录"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="各种考试记录"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/7585/" title="各种考试记录">各种考试记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-06T08:47:31.000Z" title="发表于 2023-07-06 16:47:31">2023-07-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E8%AF%95/">考试</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/">移动应用开发</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/">网络攻防</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/">算法设计与分析</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C/">算法设计实验</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/AI%E5%9F%BA%E7%A1%80/">AI基础</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/7585/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/7585/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">23 移动应用开发简答题 5x8：
+
+四大组件
+Activity 生命周期
+handler
+activity 启动方式显式&#x2F;隐式
+Android 存储方式：ContentProvider SharedPreferce
+
+代码补全：
+
+最基础的 Activity
+handler 处理信息流程
+根据 xml 文件画图: ConstraintLayout 布局 梅花布局
+
+代码题：
+
+登录界面
+打印质数界面
+
+23 人工智能基础
+不全，考完都给忘了
+
+
+20 分选择题
+A* AO*区别
+dfs bfs 在 open 表排序时的区别
+根据博弈树极大极小过程写出各节点值
+语义网络 篮球赛+每个人都喜欢奥里给
+证据推理作业题
+cf
+好像没有贝叶斯
+谓词表示
+子句集+证明逻辑结论
+决策树根据 ida 选根节点
+祖传八数码
+
+23 计算机取证
+刑法
+职业道德
+FAT 引导扇区
+FAT 目录项
+邮件头
+浏览器取证
+MFT
+内存取证 局限 风险 攻击
+
+22 密码学考的很简单，目测比 19 级简单的多，更偏向于 18 级的题目难度。而且没有考第二章信息熵和第八章数字签名的内容。
+简答题 30 分 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/55890/" title="人工智能基础"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人工智能基础"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/55890/" title="人工智能基础">人工智能基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-02T01:32:37.000Z" title="发表于 2023-07-02 09:32:37">2023-07-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/55890/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/55890/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">第二章 知识表示第三章 确定性推理第四章 搜索搜索：通过适当的搜索算法在状态空间中搜索解答路径
+问题求解系统：
+
+知识贫乏 搜索
+知识丰富 推理
+
+搜索技术：
+
+一般图搜索+启发式
+与或图
+
+推理技术：
+
+基于归结 归结反演
+基于规则 正向&#x2F;逆向演绎推理
+
+在哪里搜索就是“搜索空间”，又称为状态空间。
+人工智能中大多数问题的状态空间在问题求解之前不是全部知道的
+根据是否使用启发式信息分为：
+
+盲目搜索：按预定的搜索策略进行搜索
+启发式搜索：在搜索过程中加入了与问题有关的启发式信息 加速问题的求解并找到最优解
+
+问题的表示方式:
+
+状态空间搜索
+dfs 最深层扩展，死亡节点返回上层
+bfs 扩展根节点的所有后继
+
+
+与或图
+
+评价标准：
+
+完备：找到 1 个解
+最优：找到最优解
+时间复杂度
+空间复杂度
+
+一般图搜索状态空间&#x3D;可走的合法状态+操作算子
+节点+有向弧+操作算子
+open 表：待扩展节点close 表：已被扩展节点
+盲目搜索改进：open 表的排列方式
+
+
+
+
+open 表
+close 表
+
+
+
+bfs
+新节点放在尾部，作为队列使用，先进先出，横向发展
+
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/47863/" title="基于随身wifi的Tiny linux debian搭建教程0x00"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于随身wifi的Tiny linux debian搭建教程0x00"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/47863/" title="基于随身wifi的Tiny linux debian搭建教程0x00">基于随身wifi的Tiny linux debian搭建教程0x00</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-04T16:56:20.000Z" title="发表于 2023-06-05 00:56:20">2023-06-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/linux/">linux</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E9%9A%8F%E8%BA%ABwifi/">随身wifi</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/47863/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/47863/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">基本信息
+
+
+id
+芯片
+版号
+
+
+
+1
+高通410
+LDW924
+
+
+第一个版号比较特殊，不是常见型号，刷的时候会出点问题
+进9008短接BOOT 1.8v 插入电脑
+
+miko备份使用miko备份整个分区
+
+
+Qualcomm Premium Tool全分区备份先扫描分区
+
+再备份全分区
+
+开adb短接进9008，需要一直短接插进去，灯不亮表示成功了
+
+使用9008工具刷入aboot abootbak boot system分区，刷完重新插拔就可以使用ARDC投屏体验安卓5.1系统了,同时拥有了adb
+
+刷debian拥有adb后，不需要短接进9008了，直接命令进
+adb reboot edl
+
+用9008tool将debian包里提供的aboot刷到aboot分区
+
+
+之后format格式化boot分区
+
+此时重新插拔会提示未识别的usb设备，需要删除9008驱动，删除adb驱动，重启电脑再插拔棒子
+使用一键刷入工具
+
+ssh连接安装RNIDS驱动，酷安教程一大把
+ssh连接
+ssh root@10.42.0.1
+
+使用热点
+扩展应用原版镜像openstick项目https:/ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/61982/" title="java基础"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java基础"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/61982/" title="java基础">java基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-11T14:37:04.000Z" title="发表于 2023-02-11 22:37:04">2023-02-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/61982/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/61982/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">IOhttps://blog.csdn.net/wangbaochu/article/details/53484042
+分为字节流和字符流
+字节流：读取以字节为单位
+字符流：读取以字符为单位
+
+字节流两个抽象类: 
+InputStream OutputStream
+处理流
+BufferedInputStream &amp; BufferOutputStream带缓冲区的输入输出流
+构造方法
+BufferedInputStream(InputStream in)BufferedInputStream(InputStream in, int size)
+
+DataInputStream &amp; DataOutputStream因为是字节流无法直接读取字符，比如123，可先写入再读取
+import java.io.DataInputStream;import java.io.DataOutputStream;import java.io.FileInputStream;import java.io.FileOutputStream;public class TestDataBufferS ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/36721/" title="安卓逆向"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安卓逆向"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/36721/" title="安卓逆向">安卓逆向</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-28T04:19:01.000Z" title="发表于 2023-01-28 12:19:01">2023-01-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/36721/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/36721/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">基础APK双开更改包名 mt自带应用共存功能
+汉化使用开发者工具获取界面资源
+
+
+后mt直接搜索字符串更改
+
+Arsc
+xml
+dex
+
+结构基础更改（名字、图标）np通用编辑
+
+AndroidMainfest.xml
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;    android:versionCode=&quot;1&quot; 版本号    android:versionName=&quot;1.0&quot; 版本名    android:compileSdkVersion=&quot;32&quot;    android:compileSdkVersionCodename=&quot;12&quot;    package=&quot;com.zj.wuaipojie&quot; 包名    platformBuildVersi ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/55352/" title="sql注入常用姿势"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sql注入常用姿势"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/55352/" title="sql注入常用姿势">sql注入常用姿势</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-04T08:55:06.000Z" title="发表于 2022-12-04 16:55:06">2022-12-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf%E5%AD%A6%E4%B9%A0/">ctf学习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/ctf/">ctf</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/web/">web</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/sql%E6%B3%A8%E5%85%A5/">sql注入</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/55352/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/55352/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">常用判断列数-1 union select 1, 2, 3#
+
+不断增加序号，来试回显位置，列数不匹配会报错The used SELECT statements have a different number of columns
+-1 order by 1, 2, 3#
+
+order by超过列数会报错Unknown column &#39;4&#39; in &#39;order clause&#39;，小于等于列数不报错，增加序号确定列数
+获取库名-1 union select database(), 2, 3#-1 union select 1, 2, group_concat(schema_name) from information_schema.schemata#
+
+获取表名-1 union select 1, 2, group_concat(table_name) from information_schema.tables where table_schema=&#x27;test&#x27;#
+
+获取列名-1 union select 1, 2, group_con ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/12552/" title="od快捷键"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="od快捷键"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/12552/" title="od快捷键">od快捷键</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-08T13:02:25.000Z" title="发表于 2022-11-08 21:02:25">2022-11-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf%E5%B7%A5%E5%85%B7/">ctf工具</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/re/">re</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/ctf/">ctf</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/od/">od</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/12552/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/12552/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">F7 步进F8 步过Ctrl+F9 运行函数直到retnCtrl+F2 重新调试F7 + Ctrl+F9 + F7 基础连招Ctrl+G 跳到指定地址F4 执行到光标位置: 标签; 注释可右键查看F2 断点F9 运行* EIP位置- 上一个光标位置Enter 进入跳转（不运行时）</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/60665/" title="HackerGame 2022部分题目复现"><img class="post_bg" src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HackerGame 2022部分题目复现"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/60665/" title="HackerGame 2022部分题目复现">HackerGame 2022部分题目复现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-06T07:27:50.000Z" title="发表于 2022-11-06 15:27:50">2022-11-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/ctf%E5%AD%A6%E4%B9%A0/">ctf学习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/re/">re</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/ctf/">ctf</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/web/">web</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/60665/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/60665/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">官方wp: https://github.com/USTC-Hackergame/hackergame2022-writeups
+杂项猫咪问答利用ssh key finger查找域名，这里使用Shodan
+
+github 仓库内搜索
+
+猜数字java真随机数，无法预测下一个
+
+这题考察的是浮点数的比较，对于任意a，a != NaN成立，但 a &lt; NaN 或 NaN &lt; a均不成立，再根据判断逻辑，直接传NaN即可
+
+webLaTeX 机器人https://github.com/swisskyrepo/PayloadsAllTheThings，包含各种payload
+使用了pdflatex工具，但是禁掉了write18
+pdflatex -interaction=nonstopmode -halt-on-error -no-shell-escape result.tex
+
+读取本地文件，input有特殊字符会报错，这里用逐字包含，或者其它的很多解法
+% verbatim包，没复现成功$$ \makeatletter这里放 verbatim.sty 的内容，记得删掉行末的 % ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://blog.haorical.top/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Haorical</div><div class="author-info__description">ctf退役种子选手</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/haorical"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/haorical" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:haorical@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">过去的博客：https://blog.haorical.top</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/24549/" title="移动应用开发"><img src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="移动应用开发"/></a><div class="content"><a class="title" href="/posts/24549/" title="移动应用开发">移动应用开发</a><time datetime="2023-11-16T08:04:38.000Z" title="发表于 2023-11-16 16:04:38">2023-11-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/7585/" title="各种考试记录"><img src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="各种考试记录"/></a><div class="content"><a class="title" href="/posts/7585/" title="各种考试记录">各种考试记录</a><time datetime="2023-07-06T08:47:31.000Z" title="发表于 2023-07-06 16:47:31">2023-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/55890/" title="人工智能基础"><img src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人工智能基础"/></a><div class="content"><a class="title" href="/posts/55890/" title="人工智能基础">人工智能基础</a><time datetime="2023-07-02T01:32:37.000Z" title="发表于 2023-07-02 09:32:37">2023-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/47863/" title="基于随身wifi的Tiny linux debian搭建教程0x00"><img src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于随身wifi的Tiny linux debian搭建教程0x00"/></a><div class="content"><a class="title" href="/posts/47863/" title="基于随身wifi的Tiny linux debian搭建教程0x00">基于随身wifi的Tiny linux debian搭建教程0x00</a><time datetime="2023-06-04T16:56:20.000Z" title="发表于 2023-06-05 00:56:20">2023-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/61982/" title="java基础"><img src="https://my-photos-test.oss-cn-hangzhou.aliyuncs.com/2021/202204152201704.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java基础"/></a><div class="content"><a class="title" href="/posts/61982/" title="java基础">java基础</a><time datetime="2023-02-11T14:37:04.000Z" title="发表于 2023-02-11 22:37:04">2023-02-11</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ctf%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">ctf学习</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ctf%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">ctf工具</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"><span class="card-category-list-name">前端开发</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/"><span class="card-category-list-name">后端开发</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"><span class="card-category-list-name">嵌入式开发</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%80%83%E8%AF%95/"><span class="card-category-list-name">考试</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/re/" style="font-size: 1.38em; color: rgb(117, 154, 177)">re</a><a href="/tags/ctf/" style="font-size: 1.45em; color: rgb(81, 15, 161)">ctf</a><a href="/tags/web/" style="font-size: 1.3em; color: rgb(137, 81, 33)">web</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.3em; color: rgb(186, 84, 86)">算法</a><a href="/tags/ida/" style="font-size: 1.15em; color: rgb(115, 76, 193)">ida</a><a href="/tags/python/" style="font-size: 1.3em; color: rgb(8, 54, 9)">python</a><a href="/tags/django/" style="font-size: 1.3em; color: rgb(112, 54, 6)">django</a><a href="/tags/rest/" style="font-size: 1.22em; color: rgb(181, 31, 58)">rest</a><a href="/tags/Django-REST-framework/" style="font-size: 1.22em; color: rgb(155, 93, 181)">Django REST framework</a><a href="/tags/js/" style="font-size: 1.3em; color: rgb(85, 173, 151)">js</a><a href="/tags/od/" style="font-size: 1.15em; color: rgb(36, 114, 73)">od</a><a href="/tags/roco/" style="font-size: 1.15em; color: rgb(192, 76, 69)">roco</a><a href="/tags/sql%E6%B3%A8%E5%85%A5/" style="font-size: 1.15em; color: rgb(111, 191, 132)">sql注入</a><a href="/tags/vue/" style="font-size: 1.15em; color: rgb(135, 62, 56)">vue</a><a href="/tags/xss/" style="font-size: 1.15em; color: rgb(95, 129, 124)">xss</a><a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" style="font-size: 1.15em; color: rgb(111, 111, 140)">移动应用开发</a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.15em; color: rgb(51, 156, 20)">密码学</a><a href="/tags/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/" style="font-size: 1.15em; color: rgb(169, 109, 116)">网络攻防</a><a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" style="font-size: 1.15em; color: rgb(151, 8, 184)">算法设计与分析</a><a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C/" style="font-size: 1.15em; color: rgb(46, 163, 187)">算法设计实验</a><a href="/tags/AI%E5%9F%BA%E7%A1%80/" style="font-size: 1.15em; color: rgb(164, 6, 183)">AI基础</a><a href="/tags/esp8266/" style="font-size: 1.15em; color: rgb(69, 130, 191)">esp8266</a><a href="/tags/linux/" style="font-size: 1.15em; color: rgb(135, 98, 166)">linux</a><a href="/tags/%E9%9A%8F%E8%BA%ABwifi/" style="font-size: 1.15em; color: rgb(76, 102, 132)">随身wifi</a><a href="/tags/mysql/" style="font-size: 1.15em; color: rgb(82, 199, 151)">mysql</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">27</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-06-06T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">38.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-12-04T08:29:08.118Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Haorical</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  function loadValine () {
+    function initValine () {
+      let initData = {
+        el: '#vcomment',
+        appId: 'lHtaVmeX92EN0sTKncDq3p1B-9Nh9j0Va',
+        appKey: 'rRiyfIJKeQU4Xg5WVHLqw9cf',
+      }
+      
+      const valine = new Valine(initData)
+    }
+
+    if (typeof Valine === 'function') initValine() 
+    else getScript('https://fastly.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+  }
+
+  window.pjax ? loadValine() : window.addEventListener('load', loadValine)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
